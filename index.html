@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shark Esports</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <header>
@@ -22,8 +23,9 @@
                 </center>
 
                 <form id="form">
-                    <input type="password" id="apiKey" placeholder="Digite a API KEY do GEMINI">
-                    <select name="" id="">
+                    <input type="password" id="apiKey" style="width: 50%;" placeholder="Digite a API KEY do GEMINI">
+                    <select name="" id="gameSelect" style="width: 35%;">
+                        <option value="" disable selected>Selecione um Jogo</option>
                         <option value="gta">GTA</option>
                         <option value="cs">CS2</option>
                         <option value="wow">World of Warcraft</option>
@@ -31,11 +33,15 @@
                         <option value="crew">The Crew 2</option>
                     </select>
 
-                    <textarea name="" id="" placeholder="Builds, Dicas e Estratégias"></textarea>
-                    <button>PERGUNTAR</button>
+                    <textarea name="" id="questionInput" style="width: 100%;" placeholder="Builds, Dicas e Estratégias"></textarea>
+                    <button id="askButton">PERGUNTAR</button>
+                    <div id="aiResponse" hidden>
+                        <div class="response-content"></div>
+                    </div>
                 </form>
             </div>
         </section>
     </main>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
