@@ -1,0 +1,8 @@
+body{
+    background-image: url('/assets/fundo.png');
+    background-color: black;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    color: white;
+}
