@@ -11,7 +11,25 @@ const markdownToHtml = text => {
 }
 
 const perguntarAI = async(question, game, apiKey)=>{
-    
+    const model = "gemini-2.5-flash"
+    const gemini = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
+    const pergunta = `
+        # Especialidade
+        Você é um especialista assistente de meta para o jogo ${game}
+
+        # Tarefa
+        Você deve responder a pergunta ${question} do usuário com base no conhecimento que você detém do jogo, fornecendo dicas, estratégias ou builds relevantes
+
+        # Regras
+        - Se a pergunta não for relacionada com o jogo, responda com "Desculpe, essa pergunta não é relacionada com o jogo selecionado"
+        - Considere a data atual ${new Date().toLocaleDateString()}
+
+        # Resposta
+        - Resposta lógica e coerente
+        - Use linguagem amigável se necessário, como termos e gírias relacionadas ao jogo
+        - Responda em markdown caso seja uma resposta longa, ajuda a organizar a ideia
+        - Não gere imagens ou vídeos para o usuário
+    `
 }
 
 const enviarFormulario = async(event) => {
