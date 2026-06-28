@@ -30,32 +30,57 @@ const perguntarAI = async(question, game, apiKey)=>{
         - Responda em markdown caso seja uma resposta longa, ajuda a organizar a ideia
         - Não gere imagens ou vídeos para o usuário
     `
+    const contents = [{
+        role: "user",
+        parts: [{
+            text: pergunta
+        }]
+    }]
+
+    const tools = [{
+        google_search:{}
+    }]
+
+    const response = await fetch(geminiURL, {
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            contents,
+            tools
+        })
+    })
+
+    const data = await response.json()
+    return data.candidates[0].content.parts[0].text
 }
 
-const enviarFormulario = async(event) => {
+const enviarFormulario = async (event) => {
     event.preventDefault()
     const apiKey = apiKeyInput.value
     const game = gameSelect.value
     const question = questionInput.value
-    if(apiKey == "" || game == "" || question == ""){
-        alert('Falta campos para preencher')
+
+    if(apiKey == '' || game == '' || question == ''){
+        alert('Por favor, preencha todos os campos.')
         return
     }
 
-    askButton.disable = true
+    askButton.disabled = true
     askButton.textContent = 'Perguntando...'
     askButton.classList.add('loading')
 
     try{
         const text = await perguntarAI(question,game,apiKey)
         aiResponse.querySelector('.response-content').innerHTML = markdownToHtml(text)
-        aiResponse.removeAttribute('hidden')
+        aiResponse.removeAttribute('hidden');
     }catch(error){
-        alert('Tente novamente')
+        alert('Ocorreu um erro ao enviar a pergunta. Por favor, tente novamente.')
     }finally{
-        askButton.disable = false
+        askButton.disabled = false
         askButton.textContent = "Perguntar"
         askButton.classList.remove('loading')
     }
 }
-form.addEventListener('submit',enviarFormulario)
+form.addEventListener('submit', enviarFormulario)
