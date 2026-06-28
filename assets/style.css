@@ -6,3 +6,67 @@ body{
     background-repeat: no-repeat;
     color: white;
 }
+body *, :root{
+    font-family: 'Libernatinus Math', sans-serif;
+    line-height: 160%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    max-width: 36rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+section{
+    background-image: linear-gradient(90deg, #022ffc 0%, #0e1bd3 50%, #000000 100%);
+    border-radius: 0.625rem;
+    padding: 4px;
+}
+section>div{
+    background-color: #000000;
+    padding: 2rem;
+    padding-top: 1.5rem;
+    border-radius: 0.5rem;
+}
+section h2{
+    letter-spacing: -0.47px;
+}
+section p{
+    color: white;
+    letter-spacing: -0.18px;
+}
+
+form{
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin: 1.25rem 0;
+}
+form input, form select, form textarea{
+    all: unset;
+    border: 2px solid blue;
+    border-radius: 0.5rem;
+    padding: 0.675rem;
+    font-size: 0.875rem;
+    background-color: black;
+    font-size: 18px;
+}
+
+option{
+    background-color: aquamarine;
+}
+
+input{
+    flex: 1;
+}
+textarea{
+    flex: 1;
+}
