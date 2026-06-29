@@ -1,6 +1,6 @@
 body{
-    background-image: url('/assets/fundo.png');
-    background-color: black;
+    background-image: url('/assets/image.png');
+    background-color: rgb(0, 0, 0);
     background-size: 100% auto;
     background-position: top center;
     background-repeat: no-repeat;
@@ -8,7 +8,6 @@ body{
 }
 body *, :root{
     font-family: 'Libernatinus Math', sans-serif;
-    line-height: 160%;
 }
 
 header{
@@ -21,14 +20,14 @@ main{
     max-width: 36rem;
     width: 90%;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: -50px;
     font-size: 20px;
 }
 
 section{
     background-image: linear-gradient(90deg, #022ffc 0%, #0e1bd3 50%, #000000 100%);
     border-radius: 0.625rem;
-    padding: 4px;
+    padding: 5px;
 }
 section>div{
     background-color: #000000;
@@ -61,7 +60,7 @@ form input, form select, form textarea{
 }
 
 option{
-    background-color: aquamarine;
+    background-color: rgb(0, 102, 255);
 }
 
 input{
@@ -74,16 +73,19 @@ textarea{
 button{
     width: 100%;
     border: 0;
-    background-image: linear-gradient(0deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    background-image: linear-gradient(0deg, #0019f8 0%, #0511b8 50%, #0266fc 100%);
+    /* background-image: linear-gradient(0deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); */
     padding: 0.675rem;
     border-radius: 0.5rem;
     font-weight: bold;
     letter-spacing: 0.50px;
     transition: all 0.3s;
+    color: white;
 }
 button:hover{
     cursor: pointer;
-    background-image: linear-gradient(0deg, #E2D45C 0%, #9572FC 50%, #43E7AD 100%);
+    background-image: linear-gradient(0deg, #0266fc 0%, #0019f8 50%, #0511b8 100%);
+    /* background-image: linear-gradient(0deg, #E2D45C 0%, #9572FC 50%, #43E7AD 100%); */
     box-shadow: 0 10px 1rem rgba(5, 5, 5, 5);
 }
 button:disabled{
@@ -98,7 +100,7 @@ button:disabled{
     background: rgb(0,0,0,0.5);
     border-radius: 0.5rem;
     padding: 1.25rem;
-    border-left: 4px solid #43E7AD;
+    border-left: 4px solid #0044ff;
 }
 #aiResponse ul{
     padding-left: 1.5rem;
