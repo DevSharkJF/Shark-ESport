@@ -57,12 +57,18 @@ form input, form select, form textarea{
     background-color: #0A192F;
     font-size: 15px;
 }
+
 select{
     cursor: pointer !important;
+    text-align: center;
 }
-
 option{
     background-color: #112D4E;
+    text-align: center;
+}
+select option:checked {
+    background-color: #4CC9F0;
+    color: #000;
 }
 
 input{
@@ -78,7 +84,7 @@ button{
     background-image: linear-gradient(0deg, #0A192F 0%, #4CC9F0 50%, #0A192F 100%);
     /* background-image: linear-gradient(0deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%); */
     padding: 0.675rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-weight: bold;
     letter-spacing: 0.50px;
     transition: all 0.3s;
